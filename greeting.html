@@ -11,18 +11,25 @@
      <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
      
 	 <script type="text/babel">
- 		class Greeting extends React.Component {
+ 		class TestGround extends React.Component {
 			render() {
 				return (
 					<div>
-						<h1>Hello {this.props.name}!</h1>
+						<h1>This is my React test</h1>
+						<h2>I am trying out different elements</h2>
+						<ul>
+							<li>This is item #1 </li>
+							<li>This is item #2 </li>
+							<li>This is item #3 </li>
+						</ul>
+						<font size="20">You can alter text size via HTML</font> 
 					</div>
 				);
 			}
 		}
 		
 		ReactDOM.render(
-			<Greeting name="Bloc Student"/>, document.getElementById('app')
+			<TestGround />, document.getElementById('app')
 		);
      </script>
   </body>
