@@ -12,24 +12,41 @@
      
 	 <script type="text/babel">
  		class TestGround extends React.Component {
+		
+			constructor(props){
+           		super(props);
+         	  	this.state = {
+           		  	value: 500
+           }
+         }
+		 
 			render() {
 				return (
 					<div>
-						<h1>This is my React test</h1>
-						<h2>I am trying out different elements</h2>
-						<ul>
-							<li>This is item #1 </li>
-							<li>This is item #2 </li>
-							<li>This is item #3 </li>
-						</ul>
+						<h1>The header should appear here: {this.props.label} </h1>
+						<h2>I want an imagine to appear here:<img src={this.props.image} alt="Coin"/> </h2>
+						<h3>{this.props.altText}</h3>
+						<h4>Text number: {this.state.value}</h4>
+						
+
 						<font size="20">You can alter text size via HTML</font> 
 					</div>
 				);
 			}
 		}
 		
+		 var bucket = {
+        image: 'https://i.imgur.com/1weDCof.png',
+		altText: "This is alternate text",
+      }
+		
+		TestGround.defaultProps = {
+			label: "This is the website header!"
+		}
 		ReactDOM.render(
-			<TestGround />, document.getElementById('app')
+			<TestGround 
+			altText={bucket.altText}
+			image={bucket.image}/>, document.getElementById('app')
 		);
      </script>
   </body>
